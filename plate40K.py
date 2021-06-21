@@ -3,6 +3,10 @@ from screws import tap
 import radial_holes
 import Dimensions
 from write_svg import write_svg
+import os
+def fixpath(path):
+    return os.path.abspath(os.path.expanduser(path))
+
 inch = 25.4
 dimensions = Dimensions.Dimensions()
 
@@ -142,10 +146,12 @@ def band_tube40K():
     thickness = dimensions.plate40K['thickness']
     tube_depth = 1/8*inch
     fridge_height = 19.75*inch + 3.75*inch
-    length= 10 # fridge_height - (146+1/8*inch)
+    length= thickness-tube_depth
+    offset = 0.5;
+    # fridge_height - (146+1/8*inch)
     # length /= 2;
     p = (cq.Workplane("XY")
-         .circle(diameter/2+1).circle(diameter/2-dimensions.tube_wall+1)
+         .circle(diameter/2+1).circle(diameter/2-dimensions.tube_wall+offset)
          .extrude(length))
     # radial holes for the  tube
     holes = radial_holes.radial_holes_thru(diameter, 10, '2-56', 8, 0)
@@ -167,10 +173,10 @@ if (__name__ == 'temp'):
     show_object(t) 
     """
     m = mold_tube40K()
-    cq.exporters.export(m, './outputs/m40K.step')
+    cq.exporters.export(m, fixpath('./outputs/m40K.step'))
     show_object(m) 
     b = band_tube40K()
-    cq.exporters.export(b, './outputs/b40K.step')
+    cq.exporters.export(b, fixpath('./outputs/b40K.step'))
     show_object(b) 
 
     if False:

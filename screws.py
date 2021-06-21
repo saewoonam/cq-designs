@@ -27,6 +27,7 @@ tap_list = {
   'M8-1.25':6.8,
   'M10-1.5':8.5,
   'M10-1.25':8.8,
+  'M12-1.75': 13.0/32.0*inch,
 } 
 tap_count={}
 def reset_tap_count():
