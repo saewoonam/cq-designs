@@ -32,7 +32,7 @@ def collar():
          .transformed(rotate=(0,0,180/sides))
          .polygon(sides, 395, forConstruction=True)  # ISO320 clamps
          .vertices()
-         .hole(*tap('M10-1.5', 0.75*inch))
+         .hole(*tap('M12-1.75', 0.75*inch))
          )
     # inner top
     s = (s.faces(">Z[1]").workplane().tag("inner")
