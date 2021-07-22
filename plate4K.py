@@ -170,22 +170,23 @@ def band_tube4K():
     return p
 
 if (__name__=='temp'):
-    """
+    
     p = plate4K()
-    show_object(p)
+    show_object(p,options={"alpha":0.5, "color": (64, 164, 223)})
+    """
     cq.exporters.export(p, './outputs/plate4K.step')
     t = tube4K()
     cq.exporters.export(t, './outputs/tube4K.step')
     t = t.translate((0,0,1/8*inch))
     show_object(t) 
-    """
+    
     m = mold_tube4K()
     show_object(m)
     cq.exporters.export(m, './outputs/m4K.step')
     b = band_tube4K()
     cq.exporters.export(b, './outputs/b4K.step')
     show_object(b) 
-
+    """
     if False:
         write_svg(p, 'plate4K_x.svg', (1,0,0))
         write_svg(p, 'plate4K_pz.svg', (0,0, 1))

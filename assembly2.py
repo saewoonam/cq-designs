@@ -5,7 +5,7 @@ import math
 inch = 25.4
 
 if True:
-    pt405 = cq.importers.importStep('../chase_dr/step/PT405.stp')
+    pt405 = cq.importers.importStep('chase_dr/step/PT405.stp')
     pt405 = (pt405.rotate((0,0,0), (0,0,1), 120).translate((-80, 0, 0)))
     show_object(pt405)
     # dr = cq.importers.importStep('../chase_dr/step/CC_MINUS_NIST_DEF_v2.STEP')
@@ -17,7 +17,7 @@ if True:
     dr = cq.importers.importStep('./outputs/dr.step')
     dr = dr.rotate((0,0,0), (0,0,1), -90).translate((35,0,-334-6))
     show_object(dr)
-    ovc = cq.importers.importStep('../chase_dr/step/2N_ISO_320_OF.stp')
+    ovc = cq.importers.importStep('./chase_dr/step/2N_ISO_320_OF.stp')
     ovc = ovc.rotate((0,0,0), (0,1,0), 90)
     bbox = ovc.objects[0].BoundingBox()
     ovc = ovc.translate((-bbox.center.x, -bbox.center.y, -bbox.zmax-3.75*inch))
@@ -27,15 +27,15 @@ if True:
         "alpha" :  0.95
         })
 
-bc25 = cq.importers.importStep('../chase_dr/step/qf25-100-bc.stp')
+bc25 = cq.importers.importStep('./chase_dr/step/qf25-100-bc.stp')
 bc25 = bc25.rotate((0,0,0), (0,1,0), -90).translate((-75, -120,0))
 show_object(bc25)
-bc40 = cq.importers.importStep('../chase_dr/step/qf40-150-bc.stp')
+bc40 = cq.importers.importStep('./chase_dr/step/qf40-150-bc.stp')
 bc40 = bc40.rotate((0,0,0), (1,0,0), 90).rotate((0,0,0), (0,0,1), 30).translate((0, -125,0))
 show_object(bc40)
 bc40 = bc40.rotate((0,0,0), (0,0,1), 45)
 show_object(bc40)
-bc50 = cq.importers.importStep('../chase_dr/step/qf50-200-bc.stp')
+bc50 = cq.importers.importStep('./chase_dr/step/qf50-200-bc.stp')
 bc50 = bc50.rotate((0,0,0), (1,0,0), 90).translate((0, -220,-3.75*inch/2))
 show_object(bc50)
 
