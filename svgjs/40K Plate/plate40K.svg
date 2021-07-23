@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="1500"
+   height="750"
+   viewBox="-250 -250 1000 500"
+   id="svg198"
+   sodipodi:docname="plate40K.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:svgjs="http://svgjs.com/svgjs">
+  <defs
+     id="defs202" />
+  <sodipodi:namedview
+     id="namedview200"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.70533333"
+     inkscape:cx="749.29112"
+     inkscape:cy="375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg198" />
+  <g
+     id="g6">
+    <line
+       x1="-250"
+       y1="0"
+       x2="250"
+       y2="0"
+       stroke-opacity="0.6"
+       stroke-width="0.1"
+       stroke="grey"
+       id="line2" />
+    <line
+       x1="0"
+       y1="-250"
+       x2="0"
+       y2="250"
+       stroke-opacity="0.6"
+       stroke-width="0.1"
+       stroke="grey"
+       id="line4" />
+  </g>
+  <circle
+     r="145"
+     stroke-width="0.1"
+     stroke="black"
+     fill="none"
+     id="circle8" />
+  <circle
+     r="142.4125"
+     stroke-width="0.1"
+     stroke="black"
+     fill="none"
+     id="circle10" />
+  <circle
+     r="44.449999999999996"
+     stroke-width="0.1"
+     stroke="black"
+     fill="none"
+     transform="matrix(1,0,0,1,80,0)"
+     id="circle12" />
+  <g
+     transform="matrix(0.984807753012208,-0.17364817766693033,0.17364817766693033,0.984807753012208,80,0)"
+     id="g26">
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,55.626,0)"
+       id="circle14" />
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,27.813000000000006,48.17352911091318)"
+       id="circle16" />
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,-27.812999999999988,48.17352911091319)"
+       id="circle18" />
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,-55.626,6.812220284937066e-15)"
+       id="circle20" />
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,-27.813000000000024,-48.17352911091317)"
+       id="circle22" />
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       class="M5"
+       transform="matrix(1,0,0,1,27.813000000000006,-48.17352911091318)"
+       id="circle24" />
+  </g>
+  <g
+     transform="matrix(1,0,0,1,0,0)"
+     id="g34">
+    <g
+       transform="matrix(1,0,0,1,0,100)"
+       id="g32">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle28" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle30" />
+    </g>
+  </g>
+  <g
+     transform="matrix(1,0,0,1,0,0)"
+     id="g42">
+    <g
+       transform="matrix(1,0,0,1,0,-100)"
+       id="g40">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle36" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle38" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.7071067811865476,0.7071067811865475,-0.7071067811865475,0.7071067811865476,0,0)"
+     id="g50">
+    <g
+       transform="matrix(1,0,0,1,0,-115)"
+       id="g48">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle44" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle46" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.7071067811865476,-0.7071067811865475,0.7071067811865475,0.7071067811865476,0,0)"
+     id="g58">
+    <g
+       transform="matrix(1,0,0,1,0,115)"
+       id="g56">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle52" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle54" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.38268343236508984,-0.9238795325112867,0.9238795325112867,0.38268343236508984,0,0)"
+     id="g66">
+    <g
+       transform="matrix(1,0,0,1,0,-125)"
+       id="g64">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle60" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle62" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.38268343236508984,0.9238795325112867,-0.9238795325112867,0.38268343236508984,0,0)"
+     id="g74">
+    <g
+       transform="matrix(1,0,0,1,0,125)"
+       id="g72">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-7.9375,0)"
+         fill="#ccbb44"
+         id="circle68" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,7.9375,0)"
+         fill="#ccbb44"
+         id="circle70" />
+    </g>
+  </g>
+  <g
+     transform="matrix(1,0,0,1,0,0)"
+     id="g84">
+    <g
+       transform="matrix(1,0,0,1,0,123)"
+       id="g82">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-23.15,0)"
+         fill="#ccbb44"
+         id="circle76" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,23.15,0)"
+         fill="#ccbb44"
+         id="circle78" />
+      <rect
+         width="40"
+         height="15"
+         transform="matrix(1,0,0,1,-20,-7.5)"
+         fill="none"
+         stroke-width="0.1"
+         stroke="black"
+         id="rect80" />
+    </g>
+  </g>
+  <g
+     transform="matrix(0.8660254037844387,0.49999999999999994,-0.49999999999999994,0.8660254037844387,0,0)"
+     id="g94">
+    <g
+       transform="matrix(1,0,0,1,0,123)"
+       id="g92">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-23.15,0)"
+         fill="#ccbb44"
+         id="circle86" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,23.15,0)"
+         fill="#ccbb44"
+         id="circle88" />
+      <rect
+         width="40"
+         height="15"
+         transform="matrix(1,0,0,1,-20,-7.5)"
+         fill="none"
+         stroke-width="0.1"
+         stroke="black"
+         id="rect90" />
+    </g>
+  </g>
+  <g
+     transform="matrix(-0.8660254037844387,0.49999999999999994,-0.49999999999999994,-0.8660254037844387,0,0)"
+     id="g104">
+    <g
+       transform="matrix(1,0,0,1,0,123)"
+       id="g102">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-23.15,0)"
+         fill="#ccbb44"
+         id="circle96" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,23.15,0)"
+         fill="#ccbb44"
+         id="circle98" />
+      <rect
+         width="40"
+         height="15"
+         transform="matrix(1,0,0,1,-20,-7.5)"
+         fill="none"
+         stroke-width="0.1"
+         stroke="black"
+         id="rect100" />
+    </g>
+  </g>
+  <g
+     transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"
+     id="g114">
+    <g
+       transform="matrix(1,0,0,1,0,123)"
+       id="g112">
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,-23.15,0)"
+         fill="#ccbb44"
+         id="circle106" />
+      <circle
+         r="1.1302999999999999"
+         stroke-width="0.1"
+         stroke="black"
+         class="4-40"
+         transform="matrix(1,0,0,1,23.15,0)"
+         fill="#ccbb44"
+         id="circle108" />
+      <rect
+         width="40"
+         height="15"
+         transform="matrix(1,0,0,1,-20,-7.5)"
+         fill="none"
+         stroke-width="0.1"
+         stroke="black"
+         id="rect110" />
+    </g>
+  </g>
+  <g
+     transform="matrix(1,0,0,1,-35,0)"
+     id="g156">
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,25.4,-50.8)"
+       fill="#66ccee"
+       id="circle116" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,25.4,-25.4)"
+       fill="#66ccee"
+       id="circle118" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,25.4,0)"
+       fill="#66ccee"
+       id="circle120" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,25.4,25.4)"
+       fill="#66ccee"
+       id="circle122" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,25.4,50.8)"
+       fill="#66ccee"
+       id="circle124" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,0,-50.8)"
+       fill="#66ccee"
+       id="circle126" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,0,-25.4)"
+       fill="#66ccee"
+       id="circle128" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,0,0)"
+       fill="#66ccee"
+       id="circle130" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,0,25.4)"
+       fill="#66ccee"
+       id="circle132" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,0,50.8)"
+       fill="#66ccee"
+       id="circle134" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-25.4,-50.8)"
+       fill="#66ccee"
+       id="circle136" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-25.4,-25.4)"
+       fill="#66ccee"
+       id="circle138" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-25.4,0)"
+       fill="#66ccee"
+       id="circle140" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-25.4,25.4)"
+       fill="#66ccee"
+       id="circle142" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-25.4,50.8)"
+       fill="#66ccee"
+       id="circle144" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-50.8,-50.8)"
+       fill="#66ccee"
+       id="circle146" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-50.8,-25.4)"
+       fill="#66ccee"
+       id="circle148" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-50.8,0)"
+       fill="#66ccee"
+       id="circle150" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-50.8,25.4)"
+       fill="#66ccee"
+       id="circle152" />
+    <circle
+       r="1.1302999999999999"
+       stroke-width="0.1"
+       stroke="black"
+       class="4-40b"
+       transform="matrix(1,0,0,1,-50.8,50.8)"
+       fill="#66ccee"
+       id="circle154" />
+  </g>
+  <circle
+     r="5.3578125"
+     class="npt"
+     fill="#ee6677"
+     stroke-width="0.1"
+     stroke="black"
+     transform="matrix(1,0,0,1,-85,80)"
+     id="circle158" />
+  <circle
+     r="5.3578125"
+     class="npt"
+     fill="#ee6677"
+     stroke-width="0.1"
+     stroke="black"
+     transform="matrix(1,0,0,1,-85,-80)"
+     id="circle160" />
+  <circle
+     r="2.5527"
+     class="q-20"
+     fill="#228833"
+     stroke-width="0.1"
+     stroke="black"
+     transform="matrix(1,0,0,1,63,95)"
+     id="circle162" />
+  <circle
+     r="2.5527"
+     class="q-20"
+     fill="#228833"
+     stroke-width="0.1"
+     stroke="black"
+     transform="matrix(1,0,0,1,63,-95)"
+     id="circle164" />
+  <g
+     transform="matrix(1,0,0,1,125,125)"
+     id="g196">
+    <circle
+       r="5.3578125"
+       fill="#ee6677"
+       stroke-width="0.1"
+       stroke="black"
+       transform="matrix(1,0,0,1,0,0)"
+       id="circle166" />
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,20,0)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text168">2</text>
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,50,0)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text170">tap thru 1/4 NPT, start tap from the other side</text>
+    <circle
+       r="2.5527"
+       fill="#228833"
+       stroke-width="0.1"
+       stroke="black"
+       transform="matrix(1,0,0,1,0,18)"
+       id="circle172" />
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,20,18)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text174">2</text>
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,50,18)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text176">tap thru 1/4-20</text>
+    <circle
+       r="2.1"
+       fill="#4477aa"
+       stroke-width="0.1"
+       stroke="black"
+       transform="matrix(1,0,0,1,0,36)"
+       id="circle178" />
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,20,36)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text180">6</text>
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,50,36)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text182">tap thru M5</text>
+    <circle
+       r="1.1302999999999999"
+       fill="#ccbb44"
+       stroke-width="0.1"
+       stroke="black"
+       transform="matrix(1,0,0,1,0,54)"
+       id="circle184" />
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,20,54)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text186">20</text>
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,50,54)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text188">tap thru 4-40</text>
+    <circle
+       r="1.1302999999999999"
+       fill="#66ccee"
+       stroke-width="0.1"
+       stroke="black"
+       transform="matrix(1,0,0,1,0,72)"
+       id="circle190" />
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,20,72)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text192">20</text>
+    <text
+       font-family="Helvetica"
+       font-size="10"
+       text-anchor="left"
+       alignment-baseline="middle"
+       transform="matrix(1,0,0,1,50,72)"
+       svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
+       id="text194">blindtap 4-40</text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:17.7778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.666667"
+     x="161.15311"
+     y="20.321352"
+     id="text3880"><tspan
+       sodipodi:role="line"
+       id="tspan3878"
+       style="font-size:17.7778px;stroke-width:0.666667"
+       x="161.15311"
+       y="20.321352">8 Radial holes blind tap 2-56 - 7.4mm Depth</tspan></text>
+</svg>
