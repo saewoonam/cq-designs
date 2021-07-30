@@ -50,7 +50,7 @@ if (__name__=='temp'):
              .rect(30,262).extrude(3).translate((0,0,-3)).rotateAboutCenter((0,0,1),i)
              )
         c=c.cut(d)
-    cq.exporters.export(c, './4K_Ring.step')
+    cq.exporters.export(c, './outputs/4K_Ring.step')
     show_object(c) 
 
     if False:
