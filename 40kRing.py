@@ -37,22 +37,21 @@ def band_Lip40K():
     #add top lip
     c = (cq.Workplane("XY")
         .circle(diameter/2+1).circle(diameter/2-dimensions.tube_wall+1-10)
-        .extrude(3).translate((0,0,10)))
+        .extrude(3).translate((0,0,-3)))
     return c
 if (__name__ == 'temp'):
-    """
-    p = plate40K()
-    show_object(p)
-    cq.exporters.export(p, './outputs/plate40K.step')
-    t = tube40K()
-    cq.exporters.export(t, './outputs/tube40K.step')
-    t = t.translate((0,0,1/8*inch))
-    show_object(t) 
-    """
     a = band_Lip40K()
     b = band_tube40K()
-    c = a.add(b)
-    cq.exporters.export(c, './40K_Ring.step')
+    c = a.union(b)
+        #Holepunch Cutout
+    Rotations = []
+    for i in [0, 45, 90, 135]:
+        Rotations.append((0,0,i))
+        d = (cq.Workplane("XY")
+             .rect(30,292).extrude(3).translate((0,0,-3)).rotateAboutCenter((0,0,1),i)
+             )
+        c=c.cut(d)
+    cq.exporters.export(c, './outputs/40K_Ring.step')
     show_object(c) 
 
     if False:
