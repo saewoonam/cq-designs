@@ -14,7 +14,7 @@ importlib.reload(screws)
 inch = 25.4;
 
 def qt405Plate():
-    Thickness = 10
+    Thickness = 6.35
     diameter = 7*inch
     hole_count = 6
     s = (cq.Workplane("XY")
