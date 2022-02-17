@@ -23,9 +23,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.70533333"
-     inkscape:cx="749.29112"
-     inkscape:cy="375"
+     inkscape:zoom="1.4106667"
+     inkscape:cx="651.11059"
+     inkscape:cy="373.93667"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -915,12 +915,12 @@
      id="text250">29</text>
   <text
      font-family="Helvetica"
-     font-size="10"
+     font-size="10px"
      text-anchor="left"
      alignment-baseline="middle"
-     transform="matrix(1,0,0,1,175,215)"
+     transform="translate(175,215)"
      svgjs:data="{&quot;leading&quot;:&quot;1.5em&quot;}"
-     id="text252">blindtap 4-40</text>
+     id="text252">blindtap 4-40 - 8mm depth</text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:17.7778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.666667"
