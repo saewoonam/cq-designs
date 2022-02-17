@@ -11,7 +11,7 @@ def fixpath(path):
 inch = 25.4
 dimensions = Dimensions.Dimensions()
 import plate40K
-def create_cover(solid=False):
+def create_cover(solid=False, pocket=True):
     t = 3
     (W, H) = (42, 17)
     dx=5
@@ -24,11 +24,12 @@ def create_cover(solid=False):
         cover = cover.faces(">Z").workplane().rect(35,12).cutThruAll()
     cover = cover.edges("|Z").fillet(1)
     
-    if(not solid):
-        cover = cover.faces(">Z").workplane().rect(40,14).cutBlind(-0.5)
+    if(pocket and not solid):
+        (l,w, d) = 40.1, 14.1, 0.5
+        cover = cover.faces(">Z").workplane().rect(l,w).cutBlind(-d)
         cover = (cover.faces(">Z").workplane()
-                 .rect(40,14, forConstruction=True).vertices()
-                 .circle(0.5).cutBlind(-0.5)
+                 .rect(l,w, forConstruction=True).vertices()
+                 .circle(0.5).cutBlind(-d)
                  )
     #print(cover.edges("|X").size())
     
@@ -42,7 +43,11 @@ def create_cover(solid=False):
 cover = create_cover(True)
 loom_cover = create_cover()
 show_object(loom_cover)
-test = False
+write_step = True
+if write_step:
+    cq.exporters.export(loom_cover, "outputs/loom_cover.step")
+    cq.exporters.export(cover, "outputs/feedthru_cover.step")
+test = True
 if test:
 
     import loom_clamp.clamp

@@ -4,10 +4,11 @@ import itertools
 import math
 import sys, os
 current_path = os.path.realpath(os.path.dirname(__name__))
-sys.path.append(os.path.join(current_path, '..', 'designs'))
+sys.path.append(os.path.join(current_path, '..'))
 from screws import tap, thru
 from orings import oring
 from nw_bulkhead import nw_bulkhead
+
 import uuid
 
 def fixpath(path):
@@ -20,6 +21,12 @@ if True:
     print(bbox)
     s.faces(">Z").workplane().tag(f'top')
     #s = s.workplaneFromTagged("top")
+    s = (s.faces(">Z")
+         .workplane()
+         .rect(10*inch, 10*inch, forConstruction=True)
+         .vertices()
+         .hole(*tap('1/4-20', 3.0*inch/8.0))
+    )
     
     s = (s.workplaneFromTagged("top")
          #.moveTo(-80,0)
@@ -34,15 +41,18 @@ if True:
          #.moveTo(-80,0)
         )
     s = oring('2-254', s)
-
+    
     
 else:
-    s = (cq.Workplane("XY").box(150, 150, 150)
+    s = (cq.Workplane("XY").box(300, 300, 15)
          .faces(">Z")
          .workplane()
-         )
+         .rect(10*inch, 10*inch, forConstruction=True)
+         .vertices()
+         .hole(*tap('1/4-20', 3*inch/8))
+    )
+    s = s.faces(">Z").workplane().tag(f'top')
 
-    
 """
 # 1/4-20 mounting holes
 s = (s.workplaneFromTagged("top")
@@ -55,6 +65,8 @@ for angle in range(-1, 2):
     s = s.workplaneFromTagged(f"top").transformed(rotate=(0,0,angle*45)).center(130,0)
     s = nw_bulkhead(s, 'nw40', 20, offset=True) #, offset=True)
 
+
+
 clamp = cq.importers.importStep('./qf40-150-bc.stp')
 clamp= clamp.rotate((0,0,0), (0,1,0), 90).translate((130,0,20))
 
@@ -64,7 +76,7 @@ pt405_cover = ( pt405_cover.faces(">Z")
          .polygon(6,6.5*inch,forConstruction=True)  # mounting screws
          .vertices().hole(*thru('M6', 3.0*inch/8.0))
          )
-pt405_cover = pt405_cover.translate((0, 0, bbox.zmax))
+#pt405_cover = pt405_cover.translate((0, 0, bbox.zmax))
 show_object(s)
 show_object(pt405_cover)
 show_object(clamp)
