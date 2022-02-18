@@ -137,13 +137,22 @@ for (let loc of locations) {
     h.addTo(canvas)
 }
 
+hole = new Circle().radius(tap_list['2-56'] / 2).addClass('2-56').fill('none')
+hole.stroke({ width: 0.1, color: 'black' })
+locations = [[WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90],
+                [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90]]
+for (let loc of locations) {
+    h = hole.clone()
+    h.translate(loc[0], loc[1])
+    h.addTo(canvas)
+}
 
-legend_info = {'npt': ['1/4-npt','tap thru 1/4 NPT, start tap from the other side'],
-    'q-20': ['1/4-20', 'tap thru 1/4-20'],
-    'M5': ['M5', 'tap thru M5'],
-    'M4': ['M4', 'tap thru M4'],
-    '4-40': ['4-40', 'tap thru 4-40'],
-    '4-40b': ['4-40', 'blindtap 4-40'],
+legend_info = {'npt': ['1/4-npt','Tap thru 1/4 NPT, start tap from the other side'],
+    'q-20': ['1/4-20', 'Tap thru 1/4-20'],
+    'M5': ['M5', 'M5 Clearance Hole'],
+    '4-40': ['4-40', 'Tap thru 4-40'],
+    '4-40b': ['4-40', 'Blindtap 4 - 40'],
+    '2-56': ['2-56', 'Radial Holes 2-56 Blind Tap - 7.4mm Depth']
 }
 
 var legend = build_legend(canvas, legend_info)

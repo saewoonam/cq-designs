@@ -1,5 +1,5 @@
 import cadquery as cq
-from screws import tap
+from screws import tap, thru
 import radial_holes
 import Dimensions
 from write_svg import write_svg
@@ -50,7 +50,7 @@ def plate40K():
          .transformed(rotate=(0,0,-10))
          .polygon(6, 4.38*inch, forConstruction=True)
          .vertices()
-         .hole(*tap('M5', thickness))
+         .hole(*thru('M5', thickness))
          .workplaneFromTagged("bottom")
          .center(*dimensions.cryomech_offset)
          .hole(3.5*inch)
@@ -163,22 +163,24 @@ def band_tube40K():
     return p
 
 if (__name__ == 'temp'):
-    """
+    
     p = plate40K()
     show_object(p)
+    """
     cq.exporters.export(p, './outputs/plate40K.step')
+    
     t = tube40K()
     cq.exporters.export(t, './outputs/tube40K.step')
     t = t.translate((0,0,1/8*inch))
     show_object(t) 
-    """
+    
     m = mold_tube40K()
     cq.exporters.export(m, fixpath('./outputs/m40K.step'))
     show_object(m) 
     b = band_tube40K()
     cq.exporters.export(b, fixpath('./outputs/b40K.step'))
     show_object(b) 
-
+"""
     if False:
         write_svg(p, 'plate40K_x.svg', (1,0,0))
         write_svg(p, 'plate40K_pz.svg', (0,0, 1))
