@@ -1,5 +1,5 @@
 import cadquery as cq
-from screws import tap
+from screws import tap, thru
 import radial_holes
 import Dimensions
 from write_svg import write_svg
@@ -55,7 +55,7 @@ def plate4K():
          .center(*dimensions.cryomech_offset)
          .polygon(6, 3*inch, forConstruction=True)
          .vertices()
-         .hole(4.5,thickness)#Edit 2/17/22 4.5 mm clearence hole for M4 screw
+         .hole(*thru('M4',thickness))#Edit 2/17/22 4.5 mm clearence hole for M4 screw
          )
     
     # fiber / pumpout
@@ -189,7 +189,7 @@ if (__name__=='temp'):
     b = band_tube4K()
     cq.exporters.export(b, './outputs/b4K.step')
     show_object(b) 
-    """
+    '''
     if False:
         write_svg(p, 'plate4K_x.svg', (1,0,0))
         write_svg(p, 'plate4K_pz.svg', (0,0, 1))

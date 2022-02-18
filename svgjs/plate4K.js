@@ -1,12 +1,12 @@
 // returns a window with a document and an svg root node
 const { createSVGWindow } = require('svgdom')
-const window = createSVGWindow()
-const document = window.document
-const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text } = require('@svgdotjs/svg.js')
-const fs = require('fs')
-const {tap_list} = require('./screws.js')
+const window = createSVGWindow() //Create  virtual Window and document
+const document = window.document // shorten window.document ot document
+const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text } = require('@svgdotjs/svg.js') //load functions from svg.js
+const fs = require('fs') //include library to read/write files
+const { tap_list } = require('./screws.js') //picks out particular tap_list form screws.js
 const {collar_parameters} = require('./collar_parameters.js')
-const {bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend} = require('./utils.js');
+const { bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend} = require('./utils.js');
 
 // register window and document
 registerWindow(window, document)
@@ -29,7 +29,7 @@ const plate4K = {
 const canvas = SVG(document.documentElement).size("1500", "750")
 canvas.viewbox(-WIDTH/2, -HEIGHT/2, 2*WIDTH, HEIGHT)
 axes = new G()
-let xaxis = new Line();
+let xaxis = new Line(); //Draws Axis through center
 xaxis.plot(-WIDTH/2,0,WIDTH/2,0).stroke({ color: 'grey', opacity: 0.6, width: 0.1 })
 xaxis.addTo(axes)
 let yaxis = new Line();
@@ -180,16 +180,26 @@ for (let loc of locations) {
     h.addTo(canvas)
 }
 
-legend_info = {'npt': ['1/4-npt','tap thru 1/4 NPT, start tap from the other side'],
-    'q-20': ['1/4-20', 'tap thru 1/4-20'],
-    'M5': ['M5', 'tap thru M5'],
-    'M4': ['M4', 'tap thru M4'],
-    '4-40': ['4-40', 'tap thru 4-40'],
-    '4-40b': ['4-40', 'blindtap 4-40'],
+//Add  2-56 Radial Holes to Legend
+hole = new Circle().radius(tap_list['2-56'] / 2).addClass('2-56').fill('none')
+locations = [[WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108],
+            [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108]]
+for (let loc of locations) {
+    h = hole.clone()
+    h.translate(loc[0], loc[1])
+    h.addTo(canvas)
 }
+
+legend_info = {'npt': ['1/4-npt','Tap thru 1/4 NPT, start tap from the other side'],
+    'q-20': ['1/4-20', 'Tap thru 1/4-20'],
+    'M5': ['M5', 'Tap thru M5'],
+    'M4': ['M4', 'M4 Clearance Hole'],
+    '4-40': ['4-40', 'Tap thru 4-40'],
+    '4-40b': ['4-40', 'Blind Tap 4-40'],
+    '2-56': ['2-56', 'Radial Holes 2-56 Blind Tap - 7.4mm Depth']}
 var legend = build_legend(canvas, legend_info)
 legend.translate(WIDTH/4, HEIGHT/4)
-legend.addTo(canvas)
+legend.addTo(canvas)    
 
 fs.writeFile('./plate4K.svg', canvas.svg(), (err) => {
   if (err) throw err;
