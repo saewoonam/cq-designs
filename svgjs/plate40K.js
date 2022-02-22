@@ -2,7 +2,7 @@
 const { createSVGWindow } = require('svgdom')
 const window = createSVGWindow()
 const document = window.document
-const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Symbol } = require('@svgdotjs/svg.js')
+const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text, move } = require('@svgdotjs/svg.js')
 const fs = require('fs')
 const {tap_list} = require('./screws.js')
 const {collar_parameters} = require('./collar_parameters.js')
@@ -139,13 +139,50 @@ for (let loc of locations) {
 
 hole = new Circle().radius(tap_list['2-56'] / 2).addClass('2-56').fill('none')
 hole.stroke({ width: 0.1, color: 'black' })
-locations = [[WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90],
-                [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90], [WIDTH / 4, HEIGHT / 4 + 90]]
+
+locations = [[200, 190], [200, 190], [200, 190], [200, 190],
+            [200, 190],[200, 190], [200, 190], [200, 190]]
 for (let loc of locations) {
     h = hole.clone()
     h.translate(loc[0], loc[1])
     h.addTo(canvas)
 }
+
+text = new Text()
+text.plain('2-56 Blind Tap - 7.4mm Depth')
+text.font({
+    family: 'Helvetica'
+    , size: 10
+})
+text.addTo(canvas)
+text.translate(200, 3)
+text.rotate(0, 0)
+
+var arrow = SVG().polygon('50,0 60,20 55,20 55,50 45,50 45,20 40,20')
+locations = [{ 'pos': [-110, -25], 'rot': [90] },
+{ 'pos': [-50, 130], 'rot': 0 }, { 'pos': [-50, -210], 'rot': 180 }
+]
+
+locations = [
+    { 'center': [120, -25], 'rot': -90 },
+    { 'center': [-220, -25], 'rot': 90 },
+    { 'center': [-50, 147], 'rot': 0 },
+    { 'center': [-50, -197], 'rot': 180 },
+    { 'center': [70, -147], 'rot': -135 },
+    { 'center': [-167, -147], 'rot': 135 },
+    { 'center': [-167, 97], 'rot': 45 },
+    { 'center': [67, 107], 'rot': -45 },
+]
+
+arrow.fill('#BBBBBB')
+for (let loc of locations) {
+    h = arrow.clone()
+    h.translate(...loc['center'])
+    h.rotate(loc['rot'])
+    h.addTo(canvas)
+}
+
+
 
 legend_info = {'npt': ['1/4-npt','Tap thru 1/4 NPT, start tap from the other side'],
     'q-20': ['1/4-20', 'Tap thru 1/4-20'],
@@ -156,7 +193,7 @@ legend_info = {'npt': ['1/4-npt','Tap thru 1/4 NPT, start tap from the other sid
 }
 
 var legend = build_legend(canvas, legend_info)
-legend.translate(WIDTH/4, HEIGHT/4)
+legend.translate(200, 100)
 legend.addTo(canvas)
 
 fs.writeFile('./plate40K.svg', canvas.svg(), (err) => {
