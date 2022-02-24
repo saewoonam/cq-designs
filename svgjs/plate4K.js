@@ -6,7 +6,7 @@ const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text, move } = requ
 const fs = require('fs') //include library to read/write files
 const { tap_list } = require('./screws.js') //picks out particular tap_list form screws.js
 const {collar_parameters} = require('./collar_parameters.js')
-const { bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend} = require('./utils.js');
+const { bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend, arrow} = require('./utils.js');
 
 // register window and document
 registerWindow(window, document)
@@ -180,51 +180,19 @@ for (let loc of locations) {
     h.addTo(canvas)
 }
 
-//Add  2-56 Radial Holes to Legend
-hole = new Circle().radius(tap_list['2-56'] / 2).addClass('2-56').fill('none')
-locations = [[WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108],
-            [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108], [WIDTH / 4, HEIGHT / 4 + 108]]
-for (let loc of locations) {
-    h = hole.clone()
-    h.translate(loc[0], loc[1])
+
+arrow_graphic = arrow()
+g = new G()
+let N = 8
+let pcd = plate4K['diameter'] + 15
+for (i = 0; i < N; i++) {
+    h = arrow_graphic.clone()
+    h.addClass('arrow-2-56')
+    let theta = 2 * i * Math.PI / N //divide circle by 8 and calculate radians around circle
+    h.translate(pcd / 2 * Math.cos(theta) - 5, pcd / 2 * Math.sin(theta)) //trig positions
+    h.rotate(i * 45)//rotate arrow point
     h.addTo(canvas)
-}
-
-text = new Text()
-text.plain('2-56 Blind Tap - 7.4mm Depth')
-text.font({
-    family: 'Helvetica'
-    , size: 10
-})
-text.addTo(canvas)
-text.translate(190, 3)
-text.rotate(0, 0)
-
-var star = SVG().polygon('50,0 60,20 55,20 55,50 45,50 45,20 40,20')
-locations = [ {'pos': [-110, -25], 'rot': [90] },
-    { 'pos': [-50, 130], 'rot': 0 }, { 'pos': [-50, -210], 'rot': 180 }
-]
-
-locations = [
-    { 'center': [110, -25], 'rot': -90},
-    { 'center': [-210, -25], 'rot': 90 },
-    { 'center': [-50, 137], 'rot': 0 },
-    { 'center': [-50, -187], 'rot': 180 },
-    { 'center': [70, -137], 'rot': -135 },
-    { 'center': [-167, -137], 'rot': 135 },
-    { 'center': [-157, 97], 'rot': 45 },
-    { 'center': [57, 97], 'rot': -45 },
-]
-
-star.fill('#BBBBBB')
-for (let loc of locations) {
-    h = star.clone()
-    h.translate(...loc['center'])
-    h.rotate(loc['rot'])
-    h.addTo(canvas)
-    }
-
-
+}  
 
 legend_info = {
     'npt': ['1/4-npt', 'Tap thru 1/4 NPT, start tap from the other side'],
@@ -233,12 +201,11 @@ legend_info = {
     'M4': ['M4', 'M4 Clearance Hole'],
     '4-40': ['4-40', 'Tap thru 4-40'],
     '4-40b': ['4-40', 'Blind Tap 4-40'],
-    '2-56': ['2-56', 'Radial Holes 2-56 Blind Tap - 7.4mm Depth']
+    'arrow-2-56': ['arrow-2-56', 'Radial Holes 2-56 Blind Tap - 7.4mm Depth']
 }
 var legend = build_legend(canvas, legend_info)
-legend.translate(200, 100)
-legend.addTo(canvas)    
-  
+legend.translate(150, 100)
+legend.addTo(canvas)
 
 fs.writeFile('./plate4K.svg', canvas.svg(), (err) => {
     if (err) throw err;
