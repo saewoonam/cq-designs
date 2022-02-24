@@ -2,12 +2,11 @@
 const { createSVGWindow } = require('svgdom')
 const window = createSVGWindow()
 const document = window.document
-const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text } = require('@svgdotjs/svg.js')
+const { SVG, G, Circle, Rect, Line, Polyline, registerWindow, Polygon, Text, Symbol, Use } = require('@svgdotjs/svg.js')
 const fs = require('fs')
 const {tap_list} = require('./screws.js')
 const {collar_parameters} = require('./collar_parameters.js')
-const {bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend} = require('./utils.js');
-
+const {bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend, Arrow} = require('./utils.js');
 // register window and document
 registerWindow(window, document)
 const WIDTH=500;
@@ -26,8 +25,8 @@ const plate4K = {
     'cryomech_offset': [-80, 0],
 }
 // create canvas
-const canvas = SVG(document.documentElement).size("1500", "750")
-canvas.viewbox(-WIDTH/2, -HEIGHT/2, 2*WIDTH, HEIGHT)
+const canvas = SVG(document.documentElement).size("1000", "750")
+canvas.viewbox(-WIDTH/2, -HEIGHT/2, 4/3*WIDTH, HEIGHT)
 axes = new G()
 let xaxis = new Line();
 xaxis.plot(-WIDTH/2,0,WIDTH/2,0).stroke({ color: 'grey', opacity: 0.6, width: 0.1 })
@@ -180,18 +179,52 @@ for (let loc of locations) {
     h.addTo(canvas)
 }
 
+let arrow = Arrow()
+// Mark holes on the perimter with an arrow
+g = new G()
+let N = 8
+let pcd = plate4K['diameter'] + 10
+for (i=0; i<N; i++) {
+    let o = arrow.clone()
+    o.addClass('arrow-2-56')
+    let theta = 2*i*Math.PI / N
+    o.rotate(i*45, 0, 0)
+    o.translate( pcd/2 * Math.cos(theta), pcd/2 * Math.sin(theta))
+    o.addTo(g)
+}
+g.addTo(canvas)
+
+
 legend_info = {'npt': ['1/4-npt','tap thru 1/4 NPT, start tap from the other side'],
     'q-20': ['1/4-20', 'tap thru 1/4-20'],
     'M5': ['M5', 'tap thru M5'],
     'M4': ['M4', 'tap thru M4'],
     '4-40': ['4-40', 'tap thru 4-40'],
-    '4-40b': ['4-40', 'blindtap 4-40'],
+    '4-40b': ['4-40', 'blind tap 4-40'],
+    'arrow-2-56': ['2-56', 'radial 2-56 blind tap'],
 }
 var legend = build_legend(canvas, legend_info)
+/*
+// create line to add to legend
+var list = canvas.find('.arrow-2-56')
+var line = legend_line(arrow, ''+list.length, '2-56 blind tap, radial holes')
+// translate extra line to bottom of legend... spacing is 18
+line.translate(0, 18*Object.keys(legend_info).length)
+line.addTo(legend)
+*/
 legend.translate(WIDTH/4, HEIGHT/4)
 legend.addTo(canvas)
-
+/*
 fs.writeFile('./plate4K.svg', canvas.svg(), (err) => {
   if (err) throw err;
   console.log('The file has been saved!');
 })
+*/
+const path = require('path')
+var programName = path.basename(__filename);
+var svgName = './'+programName.split('.js')[0]+'.svg'
+fs.writeFile(svgName, canvas.svg(), (err) => {
+  if (err) throw err;
+  console.log('The file has been saved to "'+svgName+'" .');
+})
+

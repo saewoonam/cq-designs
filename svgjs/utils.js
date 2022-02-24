@@ -1,4 +1,4 @@
-const { SVG, G, Circle, Rect, Line, registerWindow, Polygon, Text } = require('@svgdotjs/svg.js')
+const { SVG, G, Circle, Rect, Line, Polyline, registerWindow, Polygon, Text } = require('@svgdotjs/svg.js')
 const inch = 25.4;
 const {tap_list} = require('./screws.js')
 
@@ -67,47 +67,63 @@ exports.polygon = (N, radius) => {
     return p
 }
 
+function legend_line(mark, text1, text2) {
+    var g = new G()
+    mark.addTo(g)
+    var text = new Text()
+    text.font({
+        family:   'Helvetica'
+        , size:     10
+        , anchor:   'left'
+        , leading:  '1.5em'
+    })
+    text.attr({'alignment-baseline':"middle"})
+    text.plain(text1)
+    text.translate(20,0)
+    text.addTo(g)
+    var t = text.clone()
+    t.plain(text2)
+    t.translate(30, 0)
+    t.addTo(g)
+
+    return g
+}
+
+
+function Arrow() {
+    let arrow = new Polyline()
+    arrow.plot([[0,10], [0, 0], [-3, 3], [0,0], [3,3]])
+    arrow.stroke({ width: 1, color:'black' }).fill('none')
+    arrow.rotate(-90, 0, 0)
+    return arrow
+}
+
 exports.build_legend = (canvas, legend_info) => {
     var idx = 0;
     var g = new G()
     var class_list = Object.keys(legend_info); //['npt', 'q-20', 'M5', 'M4', '4-40', '4-40b']
     for (const item of class_list) {
+        // find items that will be described in the legend
         var list = canvas.find('.'+item)
         if (list.length>0) {
-            list.fill(Tol_bright[idx])
-            console.log(idx, item, list.length, Tol_bright[idx])
             var text;
-            // let x = WIDTH/4;
-            // let y = WIDTH/4 +  18 * idx;
+            // Position of line in legend
             let x = 0;
             let y = 18 * idx;
-            hole = new Circle().radius(tap_list[legend_info[item][0]]/2).fill('none')
-            hole.stroke({width:0.1, color:'black'})
-            hole.fill(Tol_bright[idx])
-            hole.translate(x,y)
-            hole.addTo(g)
-            text = new Text()
-            text.font({
-                family:   'Helvetica'
-                , size:     10
-                , anchor:   'left'
-                , leading:  '1.5em'
-            })
-            text.attr({'alignment-baseline':"middle"})
-            text.plain(''+list.length)
-            text.translate(x+20,y)
-            text.addTo(g)
-            text = new Text()
-            text.font({
-                family:   'Helvetica'
-                , size:     10
-                , anchor:   'left'
-                , leading:  '1.5em'
-            })
-            text.attr({'alignment-baseline':"middle"})
-            text.plain(legend_info[item][1])
-            text.translate(x+50,y)
-            text.addTo(g)
+            console.log(idx, item, item.startsWith('arrow'), list.length, Tol_bright[idx])
+            // fill holes with a color
+            var mark
+            if (item.startsWith('arrow')) {
+                mark = Arrow()
+            } else {
+                list.fill(Tol_bright[idx])
+                mark = new Circle().radius(tap_list[legend_info[item][0]]/2).fill('none')
+                mark.stroke({width:1, color:'black'})
+                mark.fill(Tol_bright[idx])
+            }
+            var line = legend_line(mark, ''+list.length, legend_info[item][1])
+            line.translate(x, y)
+            line.addTo(g)
             idx++;
         }
     }
@@ -128,3 +144,5 @@ exports.mkweb = ["#000000", "#2272B2", "#3DB7E9", "#F748A5", "#359B73", "#D55E00
 exports.bulkheads = bulkheads;
 exports.bc = bc;
 exports.oring = oring;
+exports.legend_line = legend_line;
+exports.Arrow = Arrow;

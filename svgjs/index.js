@@ -8,6 +8,9 @@ const {tap_list} = require('./screws.js')
 const {collar_parameters} = require('./collar_parameters.js')
 const {bc, nw_bulkhead, bulkheads, polygon, oring, mkweb, Tol_bright, build_legend} = require('./utils.js');
 
+const path = require('path')
+var programName = path.basename(__filename);
+
 // register window and document
 registerWindow(window, document)
 const WIDTH=500;
@@ -201,12 +204,16 @@ legend_info = {'npt': ['1/4-npt','tap thru 1/4 NPT, start tap from the other sid
     'M5': ['M5', 'tap thru M5'],
     'M4': ['M4', 'tap thru M4'],
     '4-40': ['4-40', 'tap thru 4-40'],
-    '4-40b': ['4-40', 'blindtap 4-40'],
+    '4-40b': ['4-40', 'blind tap 4-40'],
 }
 var legend = build_legend(canvas, legend_info)
 legend.translate(WIDTH/4, HEIGHT/4)
+legend.addClass('legend')
 legend.addTo(canvas)
-fs.writeFile('./index.svg', canvas.svg(), (err) => {
+
+var svgName = './'+programName.split('.js')[0]+'.svg'
+fs.writeFile(svgName, canvas.svg(), (err) => {
   if (err) throw err;
-  console.log('The file has been saved!');
+  console.log('The file has been saved to "'+svgName+'" .');
 })
+console.log(svgName)
